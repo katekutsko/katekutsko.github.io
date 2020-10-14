@@ -1,0 +1,21 @@
+:host {
+  height: 80px;
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  margin-left: 16px;
+  font-size: 30px;
+}
+.spacer {
+  flex: 1;
+}
+i {
+  color: #b2b2b2;
+}
+.cart,
+.like-button {
+  margin-right: 16px;
+}
