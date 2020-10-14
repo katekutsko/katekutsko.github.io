@@ -17,23 +17,29 @@
   background-color: #a1a1a1;
 }
 
-.coupon-info {
-  padding: 10px 10px 5px;
-  border-bottom: 1px solid #f2f2f2;
+@mixin two-column-card {
   display: grid;
   grid-template-columns: auto auto;
   grid-column-gap: 10px;
 }
 
-.purchase-info {
-  padding: 8px 10px 0;
-  display: grid;
-  grid-template-columns: auto auto;
+.coupon-info {
+  padding: 10px 10px 5px;
+  border-bottom: 1px solid #f2f2f2;
+  @include two-column-card();
+ 
+  & :nth-child(even) {
+    text-align: end;
+  }
 }
 
-.expires-in,
-.like-button {
-  text-align: end;
+.purchase-info {
+  padding: 8px 10px 0;
+  @include two-column-card();
+}
+
+.clickable {
+  cursor: pointer;
 }
 
 .expires-in {

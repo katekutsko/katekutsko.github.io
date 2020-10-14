@@ -1,4 +1,1 @@
-<div class="category" *ngFor="let category of categories">
-    <div class="icon"></div>
-    <div class="title">{{ category?.name }}</div>
-</div>
+<category *ngFor="let category of categories" [category]="category"></category>

@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { CategoryService } from '../category/category.service';
-import { Category } from '../category/category.model';
+import { ICategory } from '../category/icategory';
 
 @Component({
     selector: 'categories-list',
@@ -8,9 +8,9 @@ import { Category } from '../category/category.model';
     styleUrls: ['./category-list.component.scss']
 })
 export class CategoryListComponent {
-    categories : Category[];
+    categories : ICategory[];
 
-    constructor(private categoriesService : CategoryService) {
+    constructor(categoriesService : CategoryService) {
         this.categories = categoriesService.getCategories();
     }
 }

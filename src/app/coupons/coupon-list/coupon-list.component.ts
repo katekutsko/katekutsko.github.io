@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Coupon } from '../coupon/coupon.model';
-import { CouponService } from '../coupon/coupon.service';
+import { ICoupon } from '../coupon/icoupon';
+import { CouponService } from '../coupon.service';
 
 @Component({
   selector: 'coupon-list',
@@ -10,5 +10,5 @@ import { CouponService } from '../coupon/coupon.service';
 export class CouponListComponent {
   constructor(private dataService: CouponService) {}
 
-  coupons: Coupon[] = this.dataService.getCoupons();
+  coupons: ICoupon[] = this.dataService.getCoupons();
 }

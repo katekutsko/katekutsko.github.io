@@ -1,20 +1,20 @@
 import { Injectable } from '@angular/core';
-import { Category } from './category.model';
+import { ICategory } from './icategory';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CategoryService {
-  private categories = [
-    new Category('Home'),
-    new Category('Beauty'),
-    new Category('Health'),
-    new Category('Food'),
-    new Category('Clothes'),
-    new Category('Holiday'),
+  categories: ICategory[] = [
+    { id: 2, name: 'Home' },
+    { id: 3, name: 'Beauty' },
+    { id: 4, name: 'Health' },
+    { id: 5, name: 'Food' },
+    { id: 6, name: 'Clothes' },
+    { id: 7, name: 'Holiday' },
   ];
 
-  getCategories(): Category[] {
+  getCategories(): ICategory[] {
     return this.categories;
   }
 }

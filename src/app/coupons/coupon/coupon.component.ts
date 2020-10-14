@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Coupon } from './coupon.model';
+import { ICoupon } from './icoupon';
 
 @Component({
   selector: 'coupon-card',
@@ -7,5 +7,5 @@ import { Coupon } from './coupon.model';
   styleUrls: ['./coupon.component.scss'],
 })
 export class CouponCardComponent {
-  @Input() coupon: Coupon;
+  @Input() coupon: ICoupon;
 }

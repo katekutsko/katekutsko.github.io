@@ -1,0 +1,12 @@
+:host {
+  width: 70px;
+  text-align: center;
+
+  & .icon {
+    height: 70px;
+    background-color: white;
+  }
+  & .category-title {
+    line-height: 30px;
+  }
+}
