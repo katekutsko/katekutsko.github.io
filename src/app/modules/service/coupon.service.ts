@@ -1,6 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { map } from 'rxjs/operators';
 import { ICoupon } from '../interface/icoupon';
 
 @Injectable({
@@ -66,15 +64,11 @@ export class CouponService {
     },
   ];
 
-  getCoupons(): Observable<ICoupon[]> {
-    return of(this.coupons);
+  getCoupons(): ICoupon[] {
+    return this.coupons;
   }
 
   getCoupon(couponId: number) {
-    return this.getCoupons().pipe(
-      map((coupons: ICoupon[]) =>
-        coupons.find((coupon) => coupon.id === couponId)
-      )
-    );
+    return this.coupons.find((coupon) => coupon.id === couponId);
   }
 }

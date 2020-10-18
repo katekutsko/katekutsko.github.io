@@ -1,19 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { Observable } from 'rxjs';
 import { ICoupon } from '../interface/icoupon';
 import { CouponService } from '../service/coupon.service';
 
 @Component({
   selector: 'app-details',
   templateUrl: './details.component.html',
-  styleUrls: ['./details.component.scss']
+  styleUrls: ['./details.component.scss'],
 })
 export class DetailsComponent implements OnInit {
+  coupon$: ICoupon;
 
-  coupon$ : Observable<ICoupon>;
-
-  constructor(private route: ActivatedRoute, private router: Router, private dataService : CouponService) {}
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private dataService: CouponService
+  ) {}
 
   ngOnInit(): void {
     const couponId = this.route.snapshot.paramMap.get('id');
@@ -22,6 +24,6 @@ export class DetailsComponent implements OnInit {
 
   gotoDetails(coupon: ICoupon) {
     const couponId = coupon ? coupon.id : null;
-    this.router.navigate(['/coupons', couponId ]);
+    this.router.navigate(['/coupons', couponId]);
   }
 }
