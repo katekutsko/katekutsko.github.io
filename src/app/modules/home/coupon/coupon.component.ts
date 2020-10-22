@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ICoupon } from './icoupon';
+import { ICoupon } from '../../interface/icoupon';
 
 @Component({
   selector: 'coupon-card',

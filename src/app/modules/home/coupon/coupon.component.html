@@ -1,7 +1,7 @@
 <div class="coupon-photo"></div>
 <div class="coupon-info">
   <div class="name">
-    {{ coupon?.name }}
+    <a class="clickable-title" [routerLink]="['/coupons', coupon.id]">{{ coupon?.name }}</a>
   </div>
   <div class="like-button clickable">
     <i class="fas fa-heart"></i>

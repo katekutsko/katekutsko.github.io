@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ICoupon } from './coupon/icoupon';
+import { ICoupon } from '../interface/icoupon';
 
 @Injectable({
   providedIn: 'root',
@@ -66,5 +66,9 @@ export class CouponService {
 
   getCoupons(): ICoupon[] {
     return this.coupons;
+  }
+
+  getCoupon(couponId: number) {
+    return this.coupons.find((coupon) => coupon.id === couponId);
   }
 }
