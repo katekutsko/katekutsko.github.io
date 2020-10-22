@@ -4,12 +4,8 @@ import { CommonModule } from '@angular/common';
 import { CheckoutRoutingModule } from './checkout-routing.module';
 import { CheckoutComponent } from './checkout.component';
 
-
 @NgModule({
   declarations: [CheckoutComponent],
-  imports: [
-    CommonModule,
-    CheckoutRoutingModule
-  ]
+  imports: [CommonModule, CheckoutRoutingModule],
 })
-export class CheckoutModule { }
+export class CheckoutModule {}

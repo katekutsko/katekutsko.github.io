@@ -1,1 +1,29 @@
-<p>checkout works!</p>
+<div class="banner">Checkout</div>
+<div class="page-content">
+  <ng-container *ngIf="selectedCoupons.length; else noItems">
+    <div class="checkout-items">
+      <div class="coupon" *ngFor="let coupon of selectedCoupons">
+        <div class="photo"></div>
+        <div class="info">
+          <div class="name">{{ coupon.name }}</div>
+          <div class="description">{{ coupon.description | slice: 0:120 }}</div>
+        </div>
+        <div class="price emphasizis align-to-center">
+          {{ coupon.price | currency: "USD" }}
+        </div>
+      </div>
+    </div>
+    <div class="total-underline"></div>
+    <div class="total emphasizis">
+      <div>Total</div>
+      <div class="align-to-center">{{ total | currency: "USD" }}</div>
+    </div>
+    <div class="buttons-container">
+      <a routerLink="/home" class>Back</a>
+      <button class="green" (click)="checkout()">Checkout</button>
+    </div>
+  </ng-container>
+  <ng-template #noItems>
+    <div class="no-items-message">No items selected</div>
+  </ng-template>
+</div>

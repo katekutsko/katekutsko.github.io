@@ -7,8 +7,11 @@
   <i class="fas fa-heart"></i>
 </div>
 <div class="cart">
-  <a routerLink="checkout"><i class="fas fa-shopping-cart"></i></a>
+  <a routerLink="/checkout"><i class="fas fa-shopping-cart"></i></a>
 </div>
+<ng-container *ngIf="getSelectedCouponsAmount() as amount">
+  <span>({{ amount }})</span>
+</ng-container>
 <div class="access-links">
   <a class="clickable-title" routerLink="login">Login</a> | Sign Up
 </div>

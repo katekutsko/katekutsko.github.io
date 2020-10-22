@@ -7,3 +7,15 @@ a.clickable-title {
   text-decoration: none;
   color: #000000;
 }
+
+button {
+  border: 1px solid lightgray;
+  background-color: white;
+  cursor: pointer;
+
+  &.green {
+    background-color: rgb(133, 201, 133);
+    color: white;
+    border: none;
+  }
+}

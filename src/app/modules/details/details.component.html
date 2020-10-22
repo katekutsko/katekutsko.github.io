@@ -1,1 +1,26 @@
-<div *ngIf="coupon$ as coupon">DETAILS {{ coupon.name }}</div>
+<ng-container *ngIf="coupon$ as coupon">
+  <div class="photo"></div>
+  <div class="card">
+    <h3>
+      {{ coupon.name }}
+    </h3>
+    <div class="description">
+      {{ coupon.description }}
+    </div>
+    <div class="time-to-buy">
+      <div class="title">Time left to buy</div>
+      {{ coupon.daysBeforeExpiration }} days
+    </div>
+    <div class="price">
+      {{ coupon.price | currency: "USD" }}
+    </div>
+    <div class="add-to-cart">
+      <button (click)="addToCart()"> Add to cart </button>
+      <a routerLink="/checkout"><i class="fas fa-shopping-cart fa-lg"></i></a>
+    </div>
+  </div>
+  <div class="detailed-description">
+    <h2>Item Detailed Description</h2>
+    {{ coupon.detailedDescription }}
+  </div>
+</ng-container>
