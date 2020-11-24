@@ -17,7 +17,7 @@ export class HeaderComponent {
     return this.checkoutService.getSelectedCouponsAmount();
   }
 
-  isLoggedIn() : boolean {
+  isLoggedIn(): boolean {
     return !!this.loginService.loggedInUser;
   }
 

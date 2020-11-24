@@ -1,29 +1,27 @@
 <div class="login-form">
   <div class="logo">Logo</div>
-  <form #loginForm="ngForm" class="fields-container" (ngSubmit)="login()">
+  <form #loginForm="ngForm" class="fields-container" (ngSubmit)="logIn()">
     <input
       name="login"
-      [(ngModel)]="loginModel.login"
+      [(ngModel)]="login"
       type="text"
       placeholder="Login"
+      (input)="resetError()"
       required
     />
     <input
       name="password"
-      [(ngModel)]="loginModel.password"
+      [(ngModel)]="password"
       type="password"
       placeholder="Password"
+      (input)="resetError()"
       required
     />
-    <button
-      class="green"
-      type="submit"
-      [disabled]="loginForm.form.invalid"
-    >
+    <button class="green" type="submit" [disabled]="loginForm.form.invalid">
       Login
     </button>
     <div *ngIf="errorMessage" class="error-message">
-      {{errorMessage}}
+      {{ errorMessage }}
     </div>
   </form>
 </div>
