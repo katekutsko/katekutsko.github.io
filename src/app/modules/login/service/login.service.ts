@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { IUser } from '../interface/iuser';
-import { UserService } from '../modules/sign-up/service/user.service';
+import { IUser } from '../../../interface/iuser';
+import { UserService } from '../../sign-up/service/user.service';
 
 @Injectable({
   providedIn: 'root',
@@ -16,7 +16,9 @@ export class LoginService {
 
     if (user && user.password === password) {
       this.loggedInUser = user;
+      return true;
     }
+    return false;
   }
 
   logout() {

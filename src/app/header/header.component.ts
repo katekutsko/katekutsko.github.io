@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CheckoutService } from '../service/checkout.service';
-import { LoginService } from '../service/login.service';
+import { LoginService } from '../modules/login/service/login.service';
 
 @Component({
   selector: 'header',
@@ -24,5 +24,9 @@ export class HeaderComponent {
   getLoggedInUserName(): string | null {
     const user = this.loginService.loggedInUser;
     return user ? user.firstName : null;
+  }
+
+  logout() {
+    this.loginService.logout();
   }
 }

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { IUser } from 'src/app/interface/iuser';
-import { LoginService } from 'src/app/service/login.service';
+import { LoginService } from 'src/app/modules/login/service/login.service';
 import { UserService } from './service/user.service';
 import { alphanumericValidator } from './validators/alphanumeric.directive';
 import { passwordValidator } from './validators/password.directive';

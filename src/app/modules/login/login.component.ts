@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ILoginForm } from 'src/app/interface/ilogin-form';
-import { LoginService } from 'src/app/service/login.service';
+import { LoginService } from 'src/app/modules/login/service/login.service';
 
 @Component({
   selector: 'app-login',
@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
     login: '',
     password: '',
   };
+  errorMessage : string;
 
   constructor(private loginService: LoginService, private router: Router) {}
 
@@ -20,10 +21,11 @@ export class LoginComponent implements OnInit {
 
   login() {
     const { login, password } = this.loginModel;
-    this.loginService.login(login, password);
 
-    if (this.loginService.loggedInUser) {
+    if (this.loginService.login(login, password)) {
       this.router.navigate([this.loginService.redurectUrl]);
+    } else {
+      this.errorMessage = 'Login or password is incorrect';
     }
   }
 }
