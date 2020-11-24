@@ -5,6 +5,7 @@ body {
 
 a.clickable-title {
   text-decoration: none;
+  cursor: pointer;
   color: #000000;
 }
 
@@ -12,6 +13,11 @@ button {
   border: 1px solid lightgray;
   background-color: white;
   cursor: pointer;
+
+  &[disabled] {
+    background-color: grey;
+    color: white;
+  }
 
   &.green {
     background-color: rgb(133, 201, 133);
