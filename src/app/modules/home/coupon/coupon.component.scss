@@ -17,16 +17,14 @@
   background-color: #a1a1a1;
 }
 
-@mixin two-column-card {
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-column-gap: 10px;
-}
-
 .coupon-info {
+  display: grid;
+  grid-template-areas: 
+  "name name name like"
+  "desc desc exp exp";
+  grid-column-gap: 10px;
   padding: 10px 10px 5px;
   border-bottom: 1px solid #f2f2f2;
-  @include two-column-card();
  
   & :nth-child(even) {
     text-align: end;
@@ -35,7 +33,9 @@
 
 .purchase-info {
   padding: 8px 10px 0;
-  @include two-column-card();
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-column-gap: 10px;
 }
 
 .clickable {
@@ -43,12 +43,14 @@
 }
 
 .expires-in {
+  grid-area: exp;
   padding-top: 7px;
   font-size: 12px;
   color: #d2d2d2;
 }
 
 .description {
+  grid-area: desc;
   padding-top: 7px;
   font-size: 14px;
   color: #b8b8b8;
@@ -58,9 +60,17 @@
 }
 
 .name {
+  grid-area: name;
   font-size: 20px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
+.like-button {
+  grid-area: like;
+}
+  
 .price {
   font-size: 20px;
   font-weight: bold;

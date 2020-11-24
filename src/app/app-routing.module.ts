@@ -1,23 +1,36 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes : Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+const routes: Routes = [
   {
     path: 'coupons/:id',
     loadChildren: () =>
-      import('./modules/details/details.module').then((module) => module.DetailsModule),
+      import('./modules/details/details.module').then(
+        (module) => module.DetailsModule
+      ),
   },
   {
     path: 'checkout',
     loadChildren: () =>
-      import('./modules/checkout/checkout.module').then((m) => m.CheckoutModule),
+      import('./modules/checkout/checkout.module').then(
+        (m) => m.CheckoutModule
+      ),
   },
   {
     path: 'login',
     pathMatch: 'full',
     loadChildren: () =>
-      import('./modules/login/login.module').then((module) => module.LoginModule),
+      import('./modules/login/login.module').then(
+        (module) => module.LoginModule
+      ),
+  },
+  {
+    path: 'signup',
+    pathMatch: 'full',
+    loadChildren: () =>
+      import('./modules/sign-up/sign-up.module').then(
+        (module) => module.SignUpModule
+      ),
   },
   {
     path: 'home',
@@ -25,10 +38,11 @@ const routes : Routes = [
     loadChildren: () =>
       import('./modules/home/home.module').then((module) => module.HomeModule),
   },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { enableTracing: true })],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

@@ -1,1 +1,26 @@
-<p>login works!</p>
+<div class="login-form">
+  <div class="logo">Logo</div>
+  <form #loginForm="ngForm" class="fields-container" (ngSubmit)="login()">
+    <input
+      name="login"
+      [(ngModel)]="loginModel.login"
+      type="text"
+      placeholder="Login"
+      required
+    />
+    <input
+      name="password"
+      [(ngModel)]="loginModel.password"
+      type="password"
+      placeholder="Password"
+      required
+    />
+    <button
+      class="green"
+      type="submit"
+      [disabled]="loginForm.form.invalid"
+    >
+      Login
+    </button>
+  </form>
+</div>

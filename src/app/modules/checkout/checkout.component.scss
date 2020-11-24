@@ -1,0 +1,118 @@
+$priceColumnWidth: 150px;
+$containerWidth: 800px;
+
+.page-content {
+  width: $containerWidth;
+  margin: {
+    right: auto;
+    left: auto;
+    bottom: 30px;
+  }
+  display: flex;
+  flex-direction: column;
+
+  & > div {
+    margin-top: 30px;
+  }
+}
+
+.banner {
+  height: 80px;
+  padding: 30px 40px 0 30px;
+  box-sizing: border-box;
+  font-size: 20px;
+  background-color: rgb(179, 179, 179);
+  color: white;
+}
+
+.checkout-items {
+  display: flex;
+  flex-direction: column;
+
+  & > div {
+    width: 100%;
+    margin-top: 30px;
+  }
+}
+
+.coupon {
+  display: flex;
+  align-items: center;
+
+  & .info {
+    flex: 1;
+    height: 90px;
+    padding-left: 20px;
+  }
+
+  & .photo {
+    width: 120px;
+    height: 120px;
+    flex-shrink: 0;
+    background-color: rgb(211, 211, 211);
+  }
+
+  & .name {
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 25px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  & .price {
+    width: $priceColumnWidth;
+  }
+}
+
+.total-underline {
+  width: 100%;
+  height: 2px;
+  background-color: rgb(209, 209, 209);
+}
+
+.no-items-message {
+  text-align: center;
+  font-size: 20px;
+}
+
+.total {
+  display: grid;
+  grid-template-columns: $containerWidth - $priceColumnWidth $priceColumnWidth;
+  text-align: end;
+}
+
+$buttonWidth: 150px;
+$buttonMargin: 20px;
+
+.buttons-container {
+  width: $buttonWidth * 2 + $buttonMargin;
+  align-self: flex-end;
+  display: flex;
+  justify-content: space-between;
+
+  & button,
+  a {
+    width: $buttonWidth;
+    height: 35px;
+  }
+
+  & a {
+    padding-top: 6px;
+    box-sizing: border-box;
+    text-decoration: none;
+    text-align: center;
+    border: 1px solid lightgray;
+    background-color: white;
+  }
+}
+
+.emphasizis {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.align-to-center {
+  text-align: center;
+}

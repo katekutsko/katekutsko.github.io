@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { CategoryService } from '../../service/category.service';
-import { ICategory } from '../../interface/icategory';
+import { CategoryService } from '../../../service/category.service';
+import { ICategory } from '../../../interface/icategory';
 
 @Component({
   selector: 'categories-list',

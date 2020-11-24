@@ -1,7 +1,9 @@
 <div class="coupon-photo"></div>
 <div class="coupon-info">
   <div class="name">
-    <a class="clickable-title" [routerLink]="['/coupons', coupon.id]">{{ coupon?.name }}</a>
+    <a class="clickable-title" [routerLink]="['/coupons', coupon.id]">{{
+      coupon?.name
+    }}</a>
   </div>
   <div class="like-button clickable">
     <i class="fas fa-heart"></i>
@@ -9,11 +11,18 @@
   <div class="description">
     {{ coupon?.description }}
   </div>
-  <div class="expires-in">Expires in {{ coupon?.daysBeforeExpiration }} days</div>
+  <div class="expires-in">
+    Expires in {{ coupon?.daysBeforeExpiration }} days
+  </div>
 </div>
 <div class="purchase-info">
   <div class="price">
     {{ coupon?.price | currency: "USD" }}
   </div>
-  <div class="add-to-cart-button clickable">Add to cart</div>
+  <button
+    class="add-to-cart-button clickable"
+    (click)="addToCart()"
+  >
+    Add to cart
+  </button>
 </div>

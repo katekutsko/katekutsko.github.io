@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { ICoupon } from '../interface/icoupon';
-import { CouponService } from '../service/coupon.service';
+import { CheckoutService } from 'src/app/service/checkout.service';
+import { ICoupon } from '../../interface/icoupon';
+import { CouponService } from '../../service/coupon.service';
 
 @Component({
   selector: 'app-details',
@@ -13,8 +14,8 @@ export class DetailsComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router,
-    private dataService: CouponService
+    private dataService: CouponService,
+    private checkoutService: CheckoutService
   ) {}
 
   ngOnInit(): void {
@@ -22,8 +23,7 @@ export class DetailsComponent implements OnInit {
     this.coupon$ = this.dataService.getCoupon(+couponId);
   }
 
-  gotoDetails(coupon: ICoupon) {
-    const couponId = coupon ? coupon.id : null;
-    this.router.navigate(['/coupons', couponId]);
+  addToCart() {
+    this.checkoutService.addToCart(this.coupon$.id)
   }
 }
