@@ -20,6 +20,6 @@ export class CheckoutComponent implements OnInit {
 
   checkout() {
     this.service.checkout();
-    this.selectedCoupons = []; 
+    this.selectedCoupons = [];
   }
 }
