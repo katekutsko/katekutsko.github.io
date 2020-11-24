@@ -6,7 +6,7 @@
         <div class="label">Login:</div>
         <input type="text" formControlName="login" />
         <div class="error-message" *ngIf="login.invalid && login.touched">
-          {{ login.errors.forbiddenChars.message }}
+          {{ login.errors.existingLogin.message }}
         </div>
       </div>
 

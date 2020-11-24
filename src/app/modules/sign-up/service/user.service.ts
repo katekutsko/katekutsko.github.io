@@ -14,15 +14,6 @@ export class UserService {
   }
 
   addUser(user: IUser) {
-    //TODO add asynchronous validator instead of it
-    const userWithSameLogin = this.users.find(
-      (existingUser) => existingUser.login === user.login
-    );
-
-    if (!userWithSameLogin) {
       this.users.push(user);
-      return true;
-    }
-    return false;
   }
 }
