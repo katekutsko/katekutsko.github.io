@@ -7,6 +7,7 @@ import { CouponCardComponent } from './coupon/coupon.component';
 import { CategoryComponent } from './category/category.component';
 import { HomeRoutingModule } from './home-routing.module';
 import { CommonModule } from '@angular/common';
+import { SentenceCasePipe } from './pipes/sentence-case.pipe';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { CommonModule } from '@angular/common';
     CategoryListComponent,
     CouponListComponent,
     CouponCardComponent,
+    SentenceCasePipe
   ],
   imports: [HomeRoutingModule, CommonModule],
   exports: [HomeComponent],
