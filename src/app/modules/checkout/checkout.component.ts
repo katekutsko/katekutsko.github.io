@@ -15,7 +15,10 @@ export class CheckoutComponent implements OnInit {
 
   ngOnInit(): void {
     this.selectedCoupons = this.service.getSelectedCoupons();
-    this.total = this.selectedCoupons.reduce((acc, coupon) => acc + coupon.price, 0);
+    this.total = this.selectedCoupons.reduce(
+      (acc, coupon) => acc + coupon.price,
+      0
+    );
   }
 
   checkout() {

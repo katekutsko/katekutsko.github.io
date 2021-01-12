@@ -13,5 +13,12 @@
   <span>({{ amount }})</span>
 </ng-container>
 <div class="access-links">
-  <a class="clickable-title" routerLink="login">Login</a> | Sign Up
+  <ng-container *ngIf="isLoggedIn(); else anonymous">
+    <a class="clickable-title">{{ getLoggedInUserName() }}</a> |
+    <a class="clickable-title" (click)="logout()">Logout</a>
+  </ng-container>
+  <ng-template #anonymous>
+    <a class="clickable-title" routerLink="login">Login</a> |
+    <a class="clickable-title" routerLink="signup">Sign up</a>
+  </ng-template>
 </div>

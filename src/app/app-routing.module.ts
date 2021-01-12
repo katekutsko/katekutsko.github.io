@@ -25,6 +25,14 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'signup',
+    pathMatch: 'full',
+    loadChildren: () =>
+      import('./modules/sign-up/sign-up.module').then(
+        (module) => module.SignUpModule
+      ),
+  },
+  {
     path: 'home',
     pathMatch: 'full',
     loadChildren: () =>
